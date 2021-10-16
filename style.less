@@ -6,12 +6,6 @@ a{
 	text-decoration: none; 
 	color: inherit;
 	}
-/* a:hover{ 
-	outline: none; 
-	text-decoration: none; 
-	color: @pink;
-	cursor: pointer;
-} */
 @bgc-main: rgb(32, 31, 31);
 @bgc-hover: rgb(18, 136, 214);
 body{
@@ -42,6 +36,7 @@ body{
             .menu-inner1{
                 display: none;
                 position: absolute;
+                text-transform: none;
                 .menu-inner1__li{
                     width: 200px;
                     background-color: @bgc-hover;
@@ -51,14 +46,22 @@ body{
                     }
                     &:hover .menu-inner2{
                         display: block;
+                    } 
+                    &:nth-child(2)::after{
+                        content: "+";
+                        position: absolute;
+                        top: 20px;
+                        right: 20px;
+                        color: white;
                     }
                     .menu-inner2{
                         display: none;
                         position: absolute;
                         top: 0;
-                        right: -118px;
+                        right: -150px;
                         background-color: @bgc-hover;
                         .menu-inner2__li{
+                            width: 150px;
                             &:hover{
                                 background-color: @bgc-main;
                             }
